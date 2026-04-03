@@ -1,0 +1,25 @@
+.score-card { display: flex; flex-direction: column; gap: 14px; }
+.score-main { display: flex; gap: 20px; align-items: flex-start; }
+@media (max-width: 700px) { .score-main { flex-direction: column; align-items: center; } }
+
+.score-ring-wrap { position: relative; width: 120px; height: 120px; flex-shrink: 0; }
+.score-ring-wrap svg { position: absolute; inset: 0; }
+.score-ring-center {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+}
+.score-num   { font-family: var(--font-mono); font-size: 28px; font-weight: 700; line-height: 1; }
+.score-denom { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+
+.score-detail { flex: 1; min-width: 0; }
+.score-rows   { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+
+.score-row       { display: flex; flex-direction: column; gap: 5px; }
+.score-row-top   { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.score-row-label { font-size: 12px; color: var(--text-secondary); }
+.score-row-pts   { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+
+.score-footer { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--border); }
+.score-footer-item  { display: flex; flex-direction: column; gap: 1px; }
+.score-footer-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.score-footer-val   { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--grey-900); }

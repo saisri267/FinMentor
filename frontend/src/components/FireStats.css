@@ -1,0 +1,9 @@
+.kpi-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 4px; }
+@media (max-width: 900px) { .kpi-strip { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .kpi-strip { grid-template-columns: 1fr; } }
+
+.kpi-card { padding: 16px 18px; }
+
+.kpi-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; }
+.kpi-value { font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: var(--grey-900); margin-bottom: 4px; line-height: 1.2; }
+.kpi-sub   { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }

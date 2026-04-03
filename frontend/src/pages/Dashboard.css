@@ -1,0 +1,45 @@
+.dash-page { min-height: 100vh; background: var(--bg-app); }
+.dash-body  { padding: 24px 0 60px; }
+
+/* Title bar */
+.dash-titlebar {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.dash-title { font-size: 20px; font-weight: 700; color: var(--grey-900); margin-bottom: 6px; }
+.dash-meta-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.meta-pill { font-size: 12px; color: var(--text-secondary); }
+.meta-sep  { color: var(--grey-300); font-size: 12px; }
+
+/* Reliability block */
+.reliability-block {
+  display: flex; flex-direction: column; align-items: flex-end;
+  padding: 10px 14px; border-radius: var(--radius); border: 1px solid;
+  text-align: right; min-width: 120px;
+}
+.reliability-block.reliability-green { background: var(--green-50);  border-color: var(--green-100); }
+.reliability-block.reliability-amber { background: var(--amber-50);  border-color: var(--amber-100); }
+.reliability-block.reliability-red   { background: var(--red-50);    border-color: var(--red-100); }
+.reliability-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.reliability-value { font-size: 14px; font-weight: 700; color: var(--grey-900); }
+.reliability-value-green { color: var(--green-700); }
+.reliability-score { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+
+/* Alert row */
+.alert-row  { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.alert-item {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 12px; border-radius: var(--radius); font-size: 12px; font-weight: 500;
+  border: 1px solid;
+}
+.alert-amber { background: var(--amber-50); border-color: var(--amber-100); color: var(--amber-700); }
+.alert-red   { background: var(--red-50);   border-color: var(--red-100);   color: var(--red-700); }
+
+/* Footer */
+.dash-footer {
+  margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.dash-footer p {
+  font-size: 11px; color: var(--text-muted); max-width: 580px; line-height: 1.6;
+}

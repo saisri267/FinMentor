@@ -1,0 +1,195 @@
+/* FinMentor AI — Global Design System
+   Palette: Professional blue-grey financial dashboard
+   Font: Inter (system stack fallback)
+   No animations heavier than 200ms transitions
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg-app:        #f0f2f5;
+  --bg-card:       #ffffff;
+  --bg-input:      #f8f9fb;
+  --bg-subtle:     #f4f6f8;
+
+  /* Blues — primary brand */
+  --blue-600:      #1d4ed8;
+  --blue-500:      #2563eb;
+  --blue-400:      #3b82f6;
+  --blue-50:       #eff6ff;
+  --blue-100:      #dbeafe;
+
+  /* Greys */
+  --grey-900:      #111827;
+  --grey-700:      #374151;
+  --grey-500:      #6b7280;
+  --grey-400:      #9ca3af;
+  --grey-300:      #d1d5db;
+  --grey-200:      #e5e7eb;
+  --grey-100:      #f3f4f6;
+
+  /* Status */
+  --green-700:     #15803d;
+  --green-600:     #16a34a;
+  --green-50:      #f0fdf4;
+  --green-100:     #dcfce7;
+  --red-700:       #b91c1c;
+  --red-600:       #dc2626;
+  --red-50:        #fef2f2;
+  --red-100:       #fee2e2;
+  --amber-700:     #b45309;
+  --amber-600:     #d97706;
+  --amber-50:      #fffbeb;
+  --amber-100:     #fef3c7;
+
+  /* Semantic aliases */
+  --text-primary:   var(--grey-900);
+  --text-secondary: var(--grey-500);
+  --text-muted:     var(--grey-400);
+  --border:         var(--grey-200);
+  --border-focus:   var(--blue-400);
+
+  /* Shadows */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+
+  /* Shape */
+  --radius-sm:  6px;
+  --radius:     8px;
+  --radius-lg:  12px;
+
+  /* Typography */
+  --font:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:  'Roboto Mono', 'Courier New', monospace;
+
+  /* Transitions — kept minimal */
+  --transition: 150ms ease;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; }
+body {
+  font-family: var(--font);
+  background: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.app { min-height: 100vh; }
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.container     { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.grid-2        { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3        { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.grid-4        { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+@media (max-width: 900px)  { .grid-3,.grid-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } .container { padding: 0 14px; } }
+
+/* ── Card ───────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+.card-title       { font-size: 14px; font-weight: 600; color: var(--grey-700); letter-spacing: 0; }
+.section-heading  { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 10px; }
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; border-radius: var(--radius); font-family: var(--font);
+  font-size: 14px; font-weight: 500; cursor: pointer; border: none;
+  transition: background var(--transition), box-shadow var(--transition);
+  text-decoration: none; white-space: nowrap;
+}
+.btn-primary {
+  background: var(--blue-600); color: #fff;
+  box-shadow: 0 1px 2px rgba(29,78,216,0.3);
+}
+.btn-primary:hover { background: var(--blue-500); }
+.btn-secondary {
+  background: var(--bg-card); color: var(--grey-700);
+  border: 1px solid var(--border); box-shadow: var(--shadow-xs);
+}
+.btn-secondary:hover { background: var(--grey-100); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-lg { padding: 11px 24px; font-size: 15px; font-weight: 600; }
+
+/* ── Form ───────────────────────────────────────────────────────────────── */
+.form-group  { display: flex; flex-direction: column; gap: 5px; }
+.form-label  { font-size: 12px; font-weight: 600; color: var(--grey-700); letter-spacing: 0.01em; }
+.form-input  {
+  background: var(--bg-input); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 12px;
+  color: var(--text-primary); font-family: var(--font-mono); font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none; width: 100%;
+}
+.form-input:focus  { border-color: var(--border-focus); box-shadow: 0 0 0 3px var(--blue-100); }
+.form-input::placeholder { color: var(--text-muted); font-size: 13px; }
+.form-hint   { font-size: 11px; color: var(--text-muted); }
+.form-error  { font-size: 11px; color: var(--red-600); font-weight: 500; }
+.form-input-error { border-color: var(--red-600) !important; box-shadow: 0 0 0 3px var(--red-100) !important; }
+
+/* ── Badges / Pills ─────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-blue   { background: var(--blue-50);   color: var(--blue-600);   border: 1px solid var(--blue-100); }
+.badge-green  { background: var(--green-50);  color: var(--green-700);  border: 1px solid var(--green-100); }
+.badge-red    { background: var(--red-50);    color: var(--red-700);    border: 1px solid var(--red-100); }
+.badge-amber  { background: var(--amber-50);  color: var(--amber-700);  border: 1px solid var(--amber-100); }
+.badge-grey   { background: var(--grey-100);  color: var(--grey-700);   border: 1px solid var(--grey-200); }
+
+/* ── Progress bar ───────────────────────────────────────────────────────── */
+.progress-track { width: 100%; background: var(--grey-200); border-radius: 999px; overflow: hidden; }
+.progress-fill  { height: 100%; border-radius: 999px; transition: width 600ms ease; }
+
+/* ── Status dot ─────────────────────────────────────────────────────────── */
+.status-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.status-dot.green  { background: var(--green-600); }
+.status-dot.amber  { background: var(--amber-600); }
+.status-dot.red    { background: var(--red-600); }
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.site-header {
+  background: var(--bg-card); border-bottom: 1px solid var(--border);
+  padding: 0 0; height: 56px; display: flex; align-items: center;
+  position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-xs);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark {
+  width: 32px; height: 32px; background: var(--blue-600); border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700; color: #fff; font-family: var(--font-mono);
+}
+.logo-name { font-size: 15px; font-weight: 700; color: var(--grey-900); }
+.logo-tagline { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+
+/* ── Spinner ────────────────────────────────────────────────────────────── */
+.spinner {
+  width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite;
+}
+.spinner-dark {
+  border-color: var(--grey-300); border-top-color: var(--grey-600);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Divider ────────────────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); }
+
+/* ── Fade in — single, fast ─────────────────────────────────────────────── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 200ms ease forwards; }

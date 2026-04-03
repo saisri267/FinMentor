@@ -1,0 +1,26 @@
+.impact-card { display: flex; flex-direction: column; gap: 12px; }
+.impact-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.impact-desc { font-size: 12px; color: var(--text-muted); margin-top: -4px; }
+.impact-note { font-size: 11px; color: var(--text-muted); padding-top: 10px; border-top: 1px solid var(--border); }
+
+.impact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+@media (max-width: 800px) { .impact-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .impact-grid { grid-template-columns: 1fr; } }
+
+.impact-panel {
+  padding: 14px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-subtle); display: flex; flex-direction: column; gap: 12px;
+}
+.impact-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.impact-lever  { font-size: 13px; font-weight: 700; color: var(--grey-900); margin-bottom: 2px; }
+.impact-detail { font-size: 11px; color: var(--text-muted); }
+.impact-saving { font-family: var(--font-mono); font-size: 16px; font-weight: 700; white-space: nowrap; }
+
+/* Compare bars */
+.cbar-wrap { display: flex; flex-direction: column; gap: 6px; }
+.cbar-row  { display: flex; align-items: center; gap: 7px; }
+.cbar-label { font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; width: 40px; flex-shrink: 0; }
+.cbar-track { flex: 1; height: 5px; background: var(--grey-100); border: 1px solid var(--grey-200); border-radius: 999px; overflow: hidden; }
+.cbar-fill  { height: 100%; border-radius: 999px; transition: width 600ms ease; }
+.cbar-val   { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--grey-700); width: 48px; text-align: right; flex-shrink: 0; }
+.cbar-saved { font-size: 11px; font-weight: 700; text-align: right; margin-top: 2px; }
